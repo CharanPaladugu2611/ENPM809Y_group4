@@ -76,7 +76,7 @@ private:
   /**
    * @brief Aerial Robot takes off to given altitude
    *
-   * @param altitude_ altitude to take off to
+   * @param altitude_ altitude to take off to 
    */
   void take_off(double altitude_);
   /**

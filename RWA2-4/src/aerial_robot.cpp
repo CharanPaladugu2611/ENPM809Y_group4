@@ -1,6 +1,6 @@
-#include "aerial_robot.h"
+#include "../include/aerial_robot.h"
 // #include "battery.h"  INCLUDE THIS WHEN BATTERY CLASS IS MADE
-// #include "sensor.h"  INCLUDE THIS WHEN SENSOR CLASS IS MADE
+#include "../include/sensor.h"  //INCLUDE THIS WHEN SENSOR CLASS IS MADE
 #include <thread>
 #include <chrono>
 

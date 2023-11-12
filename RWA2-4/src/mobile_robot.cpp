@@ -1,4 +1,4 @@
-#include "mobile_robot.h"
+#include "../include/mobile_robot.h"
 
 void RWA2::MobileRobot::rotate(double angle) {
   if (angle >= 0) {
@@ -9,7 +9,10 @@ void RWA2::MobileRobot::rotate(double angle) {
 }
 
 // empty body because it is pure virtual
-void RWA2::MobileRobot::move(double distance, double angle) {}
+void RWA2::MobileRobot::move(double distance, double angle) {
+  std::cout << "Moving the robot. Distance: " << distance << ", Angle: " << angle
+            << "\n";
+}
 
 void RWA2::MobileRobot::print_status() {
   std::cout << "================\n";
