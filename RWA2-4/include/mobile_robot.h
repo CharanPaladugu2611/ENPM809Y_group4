@@ -2,41 +2,36 @@
 
 #include <iostream>
 #include <utility>
-#include <chrono> 
-#include<vector>
-#include <memory>
-#include "sensor.h"
 
-namespace RWA2
-{
-  class MobileRobot
-  {
+namespace RWA2 {
+class MobileRobot{
+ 
+ public:
+  // ==================== attributes ====================
+  // Position of the robot
+  std::pair<double, double> position_;
+  // Orientation of the robot (degrees)
+  double orientation_;
+  // Speed of the robot
+  double speed_{0.0};
+  // Model of the robot
+  std::string model_;
 
-  public:
-    // ==================== attributes ====================
-    // Position of the robot
-    std::pair<double, double> position_;
-    // Orientation of the robot (degrees)
-    double orientation_;
-    // Speed of the .robot
-    double speed_{0.0};
-    // Model of the robot
-    std::string model_;
-
-    // BATTERY AND SENSOR - INCLUDE THESE WHEN SENSOR AND BATTERY CLASS ARE CREATED
-    //<! battery of the robot
-    // RWA2::Battery battery_;
-    //<! list of sensors for the robot
-    std::vector<std::unique_ptr<RWA2::Sensor>> sensors_;
-    
-    // ==================== constructors ====================
-    /**
-     * @brief Construct a new Mobile Robot object
-     */
-    // Default ctor
-    MobileRobot() : position_{std::make_pair(0, 0)},
-                    orientation_{0},
-                    speed_{0.0} {}
+  // BATTERY AND SENSOR - INCLUDE THESE WHEN SENSOR AND BATTERY CLASS ARE CREATED
+  //<! battery of the robot
+  //RWA2::Battery battery_;
+  //<! list of sensors for the robot
+  //std::vector<std::unique_ptr<RWA2::Sensor>> sensors_;
+  
+  // ==================== constructors ====================
+  /**
+   * @brief Construct a new Mobile Robot object
+   */
+  // Default ctor
+  MobileRobot() : 
+    position_{std::make_pair(0, 0)}, 
+    orientation_{0},
+    speed_{0.0}{}
 
     /**
      * @brief Construct a new Mobile Robot object
@@ -98,29 +93,29 @@ namespace RWA2
      */
     // double get_battery_level() const { return battery_level_; }
 
-    // ==================== methods ====================
-    /**
-     * @brief Rotate the robot by a given angle
-     *
-     * @param angle angle to rotate (in degrees)
-     */
-    virtual void rotate(double angle);
+  // ==================== methods ====================
+  /**
+   * @brief Rotate the robot by a given angle
+   *
+   * @param angle angle to rotate (in degrees)
+   */
+  virtual void rotate(double angle);
 
     // ONLY USE THIS FOR TESTING - otherwise it should be protected, not private
     // virtual void print_status();
 
-  protected:
-    /**
-     * @brief Move the robot by a given distance and angle
-     *
-     * @param distance distance to move
-     * @param angle angle to rotate (in degrees)
-     */
-    virtual void move(double distance, double angle);
-    /**
-     * @brief print the status of the robot (position, orientation, and speed)
-     */
-    virtual void print_status();
+ protected:
+  /**
+  * @brief Move the robot by a given distance and angle
+  *
+  * @param distance distance to move
+  * @param angle angle to rotate (in degrees)
+  */
+  virtual void move(double distance, double angle);
+  /**
+  * @brief print the status of the robot (position, orientation, and speed)
+  */
+  virtual void print_status();
 
   }; // class MobileRobot
 } // namespace RWA2
